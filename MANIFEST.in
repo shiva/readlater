@@ -1,0 +1,3 @@
+include readlater/config/deployment.ini_tmpl
+recursive-include readlater/public *
+recursive-include readlater/templates *

@@ -19,7 +19,12 @@ def make_map(config):
 
     # CUSTOM ROUTES HERE
 
-    map.connect('/{controller}/{action}')
-    map.connect('/{controller}/{action}/{id}')
+    map.connect('home', '/', controller='main', action='show', title='Home')
+    map.connect('unread_items', '/unread', controller='main', action='unread')
+    map.connect('add_item', '/add', controller='main', action='add')
+    map.connect('show_item', '/show/{id}', controller='main', action='show')
+    map.connect('edit_item', '/edit/{id}', controller='main', action='edit')
+    map.connect('save_item', '/save/{id}', controller='main', action='save', conditions=dict(method='POST'))
+    map.connect('delete_item', '/delete/{id}', controller='main', action='delete')
 
     return map

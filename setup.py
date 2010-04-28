@@ -8,10 +8,10 @@ except ImportError:
 setup(
     name='readlater',
     version='0.1',
-    description='',
-    author='',
-    author_email='',
-    url='',
+    description='ReadLater with relevance',
+    author='Shivanand Velmurugan',
+    author_email='me@shiv.me',
+    url='http://rl.shiv.me/',
     install_requires=[
         "Pylons>=0.9.7",
         "SQLAlchemy>=0.5",

@@ -2,7 +2,7 @@
 import logging
 
 import pylons.test
-
+from readlater import model
 from readlater.config.environment import load_environment
 from readlater.model import meta
 
@@ -15,4 +15,9 @@ def setup_app(command, conf, vars):
         load_environment(conf.global_conf, conf.local_conf)
 
     # Create the tables if they don't already exist
+    log.info("Creating tables...")
     meta.metadata.create_all(bind=meta.engine)
+    log.info("Tables created sucessfully")
+
+    log.info('Successful setup')
+ 

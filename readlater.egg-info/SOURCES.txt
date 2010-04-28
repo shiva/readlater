@@ -19,6 +19,7 @@ readlater/config/middleware.py
 readlater/config/routing.py
 readlater/controllers/__init__.py
 readlater/controllers/error.py
+readlater/controllers/main.py
 readlater/lib/__init__.py
 readlater/lib/app_globals.py
 readlater/lib/base.py
@@ -32,3 +33,4 @@ readlater/public/pylons-logo.gif
 readlater/tests/__init__.py
 readlater/tests/test_models.py
 readlater/tests/functional/__init__.py
+readlater/tests/functional/test_main.py

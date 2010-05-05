@@ -21,6 +21,7 @@ def make_map(config):
 
     map.connect('home', '/', controller='main', action='show', title='Home')
     map.connect('unread_items', '/unread', controller='main', action='unread')
+    map.connect('create_item', '/create', controller='main', action='create')
     map.connect('add_item', '/add', controller='main', action='add')
     map.connect('show_item', '/show/{id}', controller='main', action='show')
     map.connect('edit_item', '/edit/{id}', controller='main', action='edit')

@@ -26,6 +26,9 @@ class MainController(BaseController):
     def add(self):
         return render('/items/new.mako')
     
+    def create(self):
+        self.save(-1)
+		
     def edit(self, id):
         """edit item with id
         """
@@ -37,21 +40,18 @@ class MainController(BaseController):
             c.status = item.status
         return render('/edit.mako')
 
-    @authenticate_form
     def save(self, id):
         """save item with id
         """
         item = self.item_q.filter_by(id=id).first()
         if not item:
-            item = Item(request.POST.getone('headline'), request.POST.getone('url'))
-        # In a real application, you should validate and sanitize
-        # submitted data throughly! escape is a minimal example here.
-        item.desc = escape(request.POST.getone('desc'))
+            item = Item(request.params['headline'], request.params['url'])
+        item.desc="dummy desc"
         Session.add(item)
         Session.commit()
         flash('Successfully saved %s!' % item.headline)
         redirect_to('unread_items')
-        
+	
     def delete(self, id):
         """delete item with id
         """

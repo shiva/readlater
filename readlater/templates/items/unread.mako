@@ -5,10 +5,10 @@
 <a href="${url('add_item')}">add item</a>
 <ul id="items">
   % for item in c.items:
-  <li>
+  <div class='unread_item'>
     ${h.link_to(item.headline, item.uri)} 
-    &nbsp; <a href="${url('show_item', id=item.id)}">detail</a>
-    &nbsp; <a href="${url('delete_item', id=item.id)}">delete</a> 
-  </li>
+    &nbsp; <a href="${url('show_item', id=item.id)}">...</a>
+    &nbsp; <a href="${url('delete_item', id=item.id)}">X</a> 
+  </div>
   % endfor
 </ul>

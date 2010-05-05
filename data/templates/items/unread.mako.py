@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 5
-_modified_time = 1272443533.6090319
+_modified_time = 1272786876.8123269
 _template_filename='/Users/shiva/dev/workspace/readlater/readlater/templates/items/unread.mako'
 _template_uri='/items/unread.mako'
 _template_cache=cache.Cache(__name__, _modified_time)
@@ -44,16 +44,16 @@ def render_body(context,**pageargs):
         # SOURCE LINE 7
         for item in c.items:
             # SOURCE LINE 8
-            __M_writer(u'  <li>\n    ')
+            __M_writer(u"  <div class='unread_item'>\n    ")
             # SOURCE LINE 9
             __M_writer(escape(h.link_to(item.headline, item.uri)))
             __M_writer(u' \n    &nbsp; <a href="')
             # SOURCE LINE 10
             __M_writer(escape(url('show_item', id=item.id)))
-            __M_writer(u'">detail</a>\n    &nbsp; <a href="')
+            __M_writer(u'">...</a>\n    &nbsp; <a href="')
             # SOURCE LINE 11
             __M_writer(escape(url('delete_item', id=item.id)))
-            __M_writer(u'">delete</a> \n  </li>\n')
+            __M_writer(u'">X</a> \n  </div>\n')
             pass
         # SOURCE LINE 14
         __M_writer(u'</ul>\n')
